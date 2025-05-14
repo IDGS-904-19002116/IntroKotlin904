@@ -1,19 +1,27 @@
 package com.example.introkotlin904.TemasKotlin
 
 fun main() {
-    val num = readln().toString()
-    do {
-        println("\nIngrese un número:")
-        val numero = readln().toInt()
 
-        println("\nPirámide:")
+    var opcion: Int
+    do{
+        println("Ingrese un numero")
+        var numero = readln().toInt()
+        println("Piramide")
         var i = 1
-            println()
+
+        do{
+            var j = 1
+
+            do{
+                print("*")
+                j++
+            }while (j <= i)
+
+           println()
+
             i++
-        } while (i <= numero)
-        println("\n¿Qué deseas hacer?")
-        println("1. Salir")
-        println("2. Ingresar otro número")
-    }
-    println("Saliendo")
+        }while ( i <= numero)
+        println("1.Ingresar otro numero\n2.Salir")
+        opcion = readln().toInt()
+    }while (opcion != 2)
 }
