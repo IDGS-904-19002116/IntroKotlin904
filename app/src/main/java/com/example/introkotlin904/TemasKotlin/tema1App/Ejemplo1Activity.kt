@@ -26,7 +26,7 @@ class Ejemplo1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(layout.activity_ejemplo2)
+        setContentView(layout.activity_ejemplo1)
 
          et1 = findViewById<EditText>(id.et1)
          et2 = findViewById<EditText>(id.et2)

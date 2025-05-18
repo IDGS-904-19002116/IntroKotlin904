@@ -14,17 +14,17 @@ class Ejemplo2Activity : AppCompatActivity() {
 
     private lateinit var sum1: EditText
     private lateinit var sum2: EditText
-    private lateinit var Resultadotxt: TextView
+    private lateinit var resultadoTxt: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_ejemplo2)
 
         sum1 = findViewById<EditText>(R.id.sum1)
         sum2 = findViewById<EditText>(R.id.sum2)
-        Resultadotxt = findViewById<TextView>(R.id.Resultadotxt)
+        resultadoTxt = findViewById<TextView>(R.id.resultadoTxt)
 
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_ejemplo3)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -38,11 +38,11 @@ class Ejemplo2Activity : AppCompatActivity() {
         var n2 = sum2.text.toString().toInt()
         var suma = 0
 
-        for (i in n1 .. n2){
-            suma += i
+        for (i in 1 .. n2){
+            suma += n1
 
         }
-        Resultadotxt.text = "$suma"
+        resultadoTxt.text = "$suma"
     }
 
 }
