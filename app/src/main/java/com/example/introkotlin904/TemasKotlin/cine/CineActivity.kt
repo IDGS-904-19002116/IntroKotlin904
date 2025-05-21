@@ -62,26 +62,26 @@ class CineActivity : AppCompatActivity() {
         var precio_total = 0.0
 
 
-            if (ticket > max_boletos) {
-                Toast.makeText(this, "No puedes comprar más de $max_boletos boletos", Toast.LENGTH_LONG).show()
-            return
+        if (ticket > max_boletos) {
+            Toast.makeText(this, "No puedes comprar más de $max_boletos boletos", Toast.LENGTH_LONG).show()
+        return
+        }
+        else{
+            total_boletos = ticket
+            precio_total = precio_boleto * total_boletos
+            if (total_boletos >=6) {
+                precio_total = precio_total - (precio_total * 0.15)
             }
-            else{
-                total_boletos = ticket
-                precio_total = precio_boleto * total_boletos
-                if (total_boletos >=6) {
-                    precio_total = precio_total - (precio_total * 0.15)
-                }
-                else if (total_boletos >=3) {
-                    precio_total = precio_total - (precio_total * 0.10)
-                }
-                else {
-                    precio_total
-                }
-            }
-            if (txtCard) {
+            else if (total_boletos >=3) {
                 precio_total = precio_total - (precio_total * 0.10)
             }
+            else {
+                precio_total
+            }
+        }
+        if (txtCard) {
+            precio_total = precio_total - (precio_total * 0.10)
+        }
 
 
         txtTotal.text = "TOTAL: $${precio_total}"
